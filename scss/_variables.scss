@@ -1,0 +1,86 @@
+$color_1: black;
+$color_2: white;
+
+@keyframes shift {
+
+    0%,
+    100% {
+        clip-path: polygon(0% 47%, 10% 48%, 33% 54%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+    }
+
+    50% {
+        clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+    }
+}
+
+* {
+    background: linear-gradient(rgb(145, 44, 44), rgb(241, 10, 133));
+}
+
+.slide {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+img {
+    width: 100%;
+
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.column {
+    flex: 25%;
+}
+
+iframe {
+    margin-left: 25%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  
+}
+
+h2 {
+    font-size: 60px;
+    position: absolute;
+}
+
+.border {
+    color: $color_1;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
+
+.wave {
+    color: $color_2;
+    animation: shift 3s ease-in-out infinite;
+}
+@mixin foot {
+    margin-top: 20px;
+    color: pink;
+}
+
+footer {
+    @include foot;
+}
+
+@media (max-width: 800px) {
+    .column {
+        flex: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .column {
+        flex: 100%;
+    }
+}
